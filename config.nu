@@ -292,6 +292,7 @@ let-env config = {
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2 # the precision for displaying floats in tables
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
+  buffer_editor: "nvim"
   use_ansi_coloring: true
   edit_mode: vi # emacs, vi
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
@@ -538,5 +539,32 @@ let-env config = {
     }
   ]
 }
+
+# set alias
+# git add
+alias ga = git add
+alias gaa = git add --all
+# git branch
+alias gb = git branch
+alias gba = git branch -a
+alias gbd = git branch -d
+alias bgr = git branch --remote
+# git commit
+alias gc = git commit -v
+alias gca = git commit -v -a
+alias gcam = git commit -a -m
+# git diff
+alias gd = git diff
+alias gp = git push
+# git remote
+alias gr = git remote
+alias gra = git remote add
+alias grv = git remote -v
+# git status
+alias gst = git status
+alias gss = git status -s
+alias gsh = git show
+# git switch
+alias gsw = git switch
 
 source ~/.cache/starship/init.nu
