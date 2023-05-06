@@ -541,6 +541,8 @@ let-env config = {
 }
 
 # set alias
+
+# git alias
 # git add
 alias ga = git add
 alias gaa = git add --all
@@ -566,5 +568,7 @@ alias gss = git status -s
 alias gsh = git show
 # git switch
 alias gsw = git switch
+
+alias c = clear
 
 source ~/.cache/starship/init.nu
