@@ -574,4 +574,5 @@ alias c = clear
 use ~/.config/nushell/git/git-completions.nu *
 use ~/.config/nushell/cargo/cargo-completions.nu *
 
+source ~/.cache/zoxide/init.nu
 source ~/.cache/starship/init.nu
