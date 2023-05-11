@@ -571,4 +571,6 @@ alias gsw = git switch
 
 alias c = clear
 
+use ~/.config/nushell/git/git-completions.nu *
+
 source ~/.cache/starship/init.nu
