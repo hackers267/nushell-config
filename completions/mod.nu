@@ -1,1 +1,3 @@
-export use ~/.config/nushell/completions/rustfmt-completions.nu *
+export use ./rustfmt-completions.nu *
+
+export use ./rustup-completions.nu *
