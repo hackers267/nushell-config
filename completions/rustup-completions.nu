@@ -6,9 +6,14 @@ def "nu-completions rustup completions commands" [] {
     ["cargo", "rustup"]
 } 
 
+# Todo: add the completions of toolchains: all and installed
 def "nu-completions rustup toolchains" [] {
-    ["stable", "nightly"]
+   ["stable", "nightly"]
 }
+
+def "nu-completions rustup profiles" [] {
+    ["minimal", "default", "complete"]
+  }
 
 # Check for updates to Rust toolchains and rustup
 export extern "rustup check" []
@@ -19,11 +24,44 @@ export extern "rustup completions" [
   command?: string@"nu-completions rustup completions commands"
 ]
 
-# Modify a toolchain's installed components
-export extern "rustup component" []
+# List installed and available components
+export extern "rustup component list" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --installed
+  # List only installed components
+  --help(-h)
+  # Print help information
+]
+
+# Add a component to a Rust toolchain
+export extern "rustup component add" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --target
+  --help(-h)
+  # Print help information
+]
+
+# Remove a component from a Rust toolchain
+export extern "rustup component remove" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --target
+  --help(-h)
+  # Print help information
+]
+
+# Print this message or the help of the given subcommand(s)
+export extern "rustup component help" []
 
 # Set the default toolchain
-export extern "rustup default" []
+export extern "rustup default" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --help(-h)
+  # Print help information
+]
 
 # Open the documentation for the current toolchain
 export extern "rustup doc" [
@@ -72,25 +110,102 @@ export extern "rustup dump-testament" []
 export extern "rustup help" []
 
 # Update the Rust toolchains
-export extern "rustup install" []
+export extern "rustup install" [
+  --profile:string@"nu-completions rustup profiles"
+  --no-self-update
+  # Don't perform self update when running the`rustup toolchain install` command
+  --force
+  # Force an update, even if some components are missing
+  --force-non-host
+  # install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+]
 
 # Update Rust toolchains and rustup
-export extern "rustup update" []
+export extern "rustup update" [
+  --no-self-update
+  # Don't perform self update when running the`rustup toolchain install` command
+  --force
+  # Force an update, even if some components are missing
+  --force-non-host
+  # install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+]
 
-# Modify or query the installed toolchains
-export extern "rustup toolchain" []
+# List installed toolchain
+export extern "rustup toolchain list" [
+  --verbose(-v)
+  # Enable verbose output with toolchain information
+  --help(-h)
+  # Print help information
+]
+
+# install or undate a given toolchain
+export extern "rustup toolchain install" [
+  --profile:string@"nu-completions rustup profiles"
+  --component(-c)
+  # Add specific components on installation
+  --target(-t)
+  # Add specific targets on installation
+  --no-self-update
+  # Don't perform self update when running the`rustup toolchain install` command
+  --force
+  # Force an update, even if some components are missing
+  --allow-downgrade
+  # Allow rustup to downgrade the toolchain to satisfy your component choice
+  --force-non-host
+  # install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+]
+
+# Uninstall a toolchain
+export extern "rustup toolchain uninstall" []
+
+# Create a custom toolchain by symlinking to a directory
+export extern "rustup toolchain link" []
+
+# Print this message or the help of the given subcommand(s)
+export extern "rustup toolchain help" []
 
 # Uninstall Rust toolchains
 export extern "rustup uninstall" []
 
 # Display which binary will be run for a given command
-export extern "rustup which" []
+export extern "rustup which" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+]
 
-# Modify or query the installed toolchains
-export extern "rustup target" []
+# List installed and available targets
+export extern "rustup target list" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --installed
+  # List only installed targets
+  --help(-h)
+  # Print help information
+]
+
+# Add a target to a Rust toolchain
+export extern "rustup target add" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --help(-h)
+  # Print help information
+]
+
+# Remove a target from a Rust toolchain
+export extern "rustup target remove" [
+  --toolchain:string@"nu-completions rustup toolchains"
+  # toolchain name
+  --help(-h)
+  # Print help information
+]
 
 # Show the active and installed toolchains or profiles
-export extern "rustup show" []
+export extern "rustup show" [
+  --verbose(-v)
+  # Enable verbose output with rustc installation for all installed toolchains
+]
+
+# Todo: add rustup show subcommands
 
 # Alter rustup settings
 export extern "rustup set" []
