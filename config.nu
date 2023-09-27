@@ -569,6 +569,7 @@ alias gsh = git show
 # git switch
 alias gsw = git switch
 
+alias top = btm
 alias c = clear
 
 use ~/.config/nushell/git/git-completions.nu *

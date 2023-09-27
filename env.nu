@@ -15,7 +15,7 @@ def create_left_prompt [] {
     }
 
     let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace -s $home "~"),
+        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
         ($env.PWD | str substring ($home | str length)..)
     ] | str join)
 
@@ -89,7 +89,7 @@ $env.NU_PLUGIN_DIRS = [
 $env.EDITOR = "/usr/bin/nvim"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/silence/.cargo/bin')
 
 # start with starship
 mkdir ~/.cache/starship
