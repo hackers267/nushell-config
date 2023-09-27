@@ -572,7 +572,6 @@ alias gsw = git switch
 alias top = btm
 alias c = clear
 
-use ~/.config/nushell/paru/paru-completions.nu *
 use ~/.config/nushell/completions/mod.nu *
 
 source ~/.cache/zoxide/init.nu

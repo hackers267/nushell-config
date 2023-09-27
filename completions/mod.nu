@@ -4,3 +4,4 @@ export use ./pnpm-completions.nu *
 export use ./hx-completions.nu *
 export use ./cargo.nu *
 export use ./git.nu *
+export use ./paru.nu *
