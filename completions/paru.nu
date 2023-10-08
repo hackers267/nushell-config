@@ -3,7 +3,7 @@ def "nu-complete local packages" [] {
 }
 
 def "nu-complete all packages" [] {
-^paru -Sl | lines | split column cate name version | get name | uniq
+^paru -Pc | lines | split column ' ' pack lib | get pack | uniq
 }
 # View package infomation
 export extern "paru -Qi" [
@@ -20,7 +20,7 @@ export extern "paru -Sc" []
 
 # View package infomation
 export extern "paru -Si" [
-
+  package?: string@"nu-complete all packages",
 ]
 
 # Remove a package from the system
