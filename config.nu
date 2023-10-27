@@ -541,7 +541,8 @@ $env.config = {
 }
 
 # set alias
-
+alias ll = ls -l
+alias la = ls -al
 # git alias
 # git add
 alias ga = git add
