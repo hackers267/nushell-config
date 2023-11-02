@@ -1,13 +1,22 @@
+def "edit_mode" [] {
+   ["emacs", "vi"]
+}
+
+def "opt" [] {
+   [0, 1, 2]
+}
 # A REPL for Rust
 export extern "main" [
    --disable-readline
+   # 禁用行模式
    --ide-mode
-   # Optimization level (0, 1 or 2) [default: ] 
-   --opt
-   # EDIT_MODE  [default: emacs] [possible values: emacs, vi]
-   --edit-mode
+   # 使用ide模式启动
+   --opt: string@"opt"
+   # 优代级别
+   --edit-mode: string@"edit_mode"
+   # 编辑器模式  [默认: emacs]
    --help(-h)                   
-   # Print help
+   # 显示帮助
    --version(-V)                
-   # Print version
+   # 显示版本号
 ]
