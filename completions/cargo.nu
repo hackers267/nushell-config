@@ -46,22 +46,22 @@ def "nu-complete cargo vcs" [] {
 
 # Disabled due to messing with undefined cargo-subcommands
 
-# # Rust's package manager
-# export extern "cargo"  [
-#   --version(-V)      # Print version info and exit
-#   --list             # List installed commands
-#   --explain: number  # Run `rustc --explain CODE`
-#   --verbose(-v)      # Use verbose output. May be specified twice for "very verbose" output
-#   --quiet(-q)        # Do not print cargo log messages
-#   --color: string@"nu-complete cargo color"  # Control when colored output is used
-#   --frozen           # Require Cargo.lock and cache are up to date
-#   --locked           # Require Cargo.lock is up to date
-#   --offline          # Run without accessing the network
-#   --config: string   # Override a configuration value
-#   -Z: any            # Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
-#   -h, --help         # Print help information
-#   ...args: any
-# ]
+ # Rust's package manager
+ export extern "main"  [
+   --version(-V)      # Print version info and exit
+   --list             # List installed commands
+   --explain: number  # Run `rustc --explain CODE`
+   --verbose(-v)      # Use verbose output. May be specified twice for "very verbose" output
+   --quiet(-q)        # Do not print cargo log messages
+   --color: string@"nu-complete cargo color"  # Control when colored output is used
+   --frozen           # Require Cargo.lock and cache are up to date
+   --locked           # Require Cargo.lock is up to date
+   --offline          # Run without accessing the network
+   --config: string   # Override a configuration value
+   -Z: any            # Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+   -h, --help         # Print help information
+   ...args: any
+ ]
 
 #*> Common Commands (Sorted by order shown by running the `cargo` command) <*#
 
