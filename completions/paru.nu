@@ -32,3 +32,7 @@ export extern "paru -R" [
 export extern "paru -Rc" [
   package?: string@"nu-complete local packages"
 ]
+# Remove all dependent packages
+export extern "paru -Rcns" [
+  package?: string@"nu-complete local packages"
+]
