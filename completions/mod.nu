@@ -8,3 +8,4 @@ export use ./paru.nu *
 export use ./systemctl.nu *
 export use ./nmcli.nu *
 export use ./evcxr.nu *
+export use ./file.nu *
