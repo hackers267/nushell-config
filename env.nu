@@ -86,13 +86,13 @@ $env.NU_PLUGIN_DIRS = [
 
 # Set the editor
 
-$env.EDITOR = "/usr/bin/nvim"
+$env.EDITOR = "/usr/bin/helix"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/silence/.cargo/bin')
-
+$env.STARSHIP_CONFIG = {"/.config/starship/starship.toml" | prepend $env.HOME}
 # start with starship
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
-mkdir ~/.cache/zoxide
-zoxide init nushell | save -f ~/.cache/zoxide/init.nu
+# mkdir ~/.cache/starship
+# starship init nu | save -f ~/.cache/starship/init.nu
+# mkdir ~/.cache/zoxide
+# zoxide init nushell | save -f ~/.cache/zoxide/init.nu

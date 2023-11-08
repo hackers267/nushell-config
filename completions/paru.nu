@@ -28,11 +28,16 @@ export extern "paru -R" [
   package?: string@"nu-complete local packages"
 ]
 
-# Remove all dependent packages
+# 卸载并删除依赖
+export extern "paru -Rnsc" [
+  package?: string@"nu-complete local packages"
+]
+
+# 卸载依赖
 export extern "paru -Rc" [
   package?: string@"nu-complete local packages"
 ]
-# Remove all dependent packages
+# 卸载并删除依赖
 export extern "paru -Rcns" [
   package?: string@"nu-complete local packages"
 ]
