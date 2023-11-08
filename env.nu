@@ -5,6 +5,7 @@
 $env.STARSHIP_SHELL = "nu"
 
 def create_left_prompt [] {
+    # starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
     mut home = ""
     try {
         if $nu.os-info.name == "windows" {
@@ -90,7 +91,7 @@ $env.EDITOR = "/usr/bin/helix"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/silence/.cargo/bin')
-$env.STARSHIP_CONFIG = {"/.config/starship/starship.toml" | prepend $env.HOME}
+$env.STARSHIP_CONFIG = ("/.config/starship/starship.toml" | prepend $env.HOME | str join)
 # start with starship
 # mkdir ~/.cache/starship
 # starship init nu | save -f ~/.cache/starship/init.nu
