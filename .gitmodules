@@ -1,0 +1,4 @@
+[submodule "completions"]
+	path = completions
+	url = git@gitee.com:hackers267/nu-completions.git
+	branch = main
