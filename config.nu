@@ -577,3 +577,4 @@ use ~/.config/nushell/completions/mod.nu *
 
 source ~/.cache/zoxide/init.nu
 source ~/.cache/starship/init.nu
+source ~/.cache/yazi/init.nu
