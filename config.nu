@@ -574,11 +574,8 @@ alias top = btm
 alias c = clear
 
 use ~/.config/nushell/completions/mod.nu *
-
+source ~/.config/nushell/aliases.nu
 source ~/.cache/zoxide/init.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/yazi/init.nu
 
-export def "gitignore add" [name:string] {
-  $name | save .gitignore --append
-}
