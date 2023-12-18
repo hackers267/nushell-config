@@ -89,6 +89,9 @@ $env.NU_PLUGIN_DIRS = [
 
 $env.EDITOR = "/usr/bin/helix"
 
+# Set the lang
+$env.LANG = zh_CN.UTF-8
+
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/silence/.cargo/bin')
 $env.STARSHIP_CONFIG = ("/.config/starship/starship.toml" | prepend $env.HOME | str join)
