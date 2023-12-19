@@ -574,6 +574,7 @@ alias top = btm
 alias c = clear
 
 use ~/.config/nushell/completions/mod.nu *
+source ~/.config/nushell/scripts/day.nu
 source ~/.config/nushell/aliases.nu
 source ~/.cache/zoxide/init.nu
 source ~/.cache/starship/init.nu
