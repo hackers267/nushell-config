@@ -93,7 +93,7 @@ $env.EDITOR = "/usr/bin/helix"
 $env.LANG = zh_CN.UTF-8
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.volta/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.volta/bin' | prepend '~/.cargo/bin' | prepend "~/.config/nushell/scripts")
 $env.STARSHIP_CONFIG = ("/.config/starship/starship.toml" | prepend $env.HOME | str join)
 # start with starship
 # mkdir ~/.cache/starship
