@@ -271,7 +271,7 @@ $env.config = {
     case_sensitive: false # set to true to enable case-sensitive completions
     quick: true  # set this to false to prevent auto-selecting completions when only one remains
     partial: true  # set this to false to prevent partial filling of the prompt
-    algorithm: "prefix"  # prefix or fuzzy
+    algorithm: "fuzzy"  # prefix or fuzzy
     external: {
       enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
       max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
@@ -284,12 +284,12 @@ $env.config = {
   }
   cursor_shape: {
     emacs: line # block, underscore, line (line is the default)
-    vi_insert: block # block, underscore, line (block is the default)
+    vi_insert: line # block, underscore, line (block is the default)
     vi_normal: underscore # block, underscore, line  (underscore is the default)
   }
   color_config: $dark_theme   # if you want a light theme, replace `$dark_theme` to `$light_theme`
   use_grid_icons: true
-  footer_mode: "25" # always, never, number_of_rows, auto
+  footer_mode: auto # always, never, number_of_rows, auto
   float_precision: 2 # the precision for displaying floats in tables
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   buffer_editor: "helix"
